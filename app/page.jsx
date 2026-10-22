@@ -1,6 +1,6 @@
+"use client";
 import {moduleOne} from "../data/module-one";
 import moduleOneTests from "../data/module-one-tests.json";
-"use client";
 import {useMemo,useState} from "react";
 const modules=[
 "Введение в физиологию сердечно-сосудистой системы",
