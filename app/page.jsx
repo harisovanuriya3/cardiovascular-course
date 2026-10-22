@@ -56,6 +56,5 @@ export default function Page(){
 {![0,2,3,4,6,7,8,9,16].includes(section)?<p>Этот раздел находится в разработке. Готового интерактива здесь пока нет.</p>:null}
 </article>:null}
 {section!==null&&(chosen>=2||lang!=="ru")?<article className="material" role="region" aria-live="polite"><h3>{sections[lang][section]}</h3><p><strong>{modules[chosen]}</strong></p><p>{lang==="ru"?"Этот подраздел пока не наполнен и не выдаётся за готовый учебный материал. Выберите модуль 1 или 2 на русском языке для просмотра научной теории, тестов и ситуационных задач.":lang==="en"?"This section is not yet authored. Modules 1 and 2 currently have Russian-language lessons, cases and quizzes; translations are pending.":"Бұл бөлім әлі толықтырылмаған. 1 және 2-модульдердің теориясы, тесттері мен есептері қазір орыс тілінде қолжетімді; аудармалар дайындалуда."}</p><button type="button" onClick={()=>setSection(null)}>{lang==="ru"?"Закрыть подраздел":lang==="en"?"Close section":"Бөлімді жабу"}</button></article>:null}
-{section!==null&&chosen<2&&lang==="ru"&&![0,2,3,4,6,7,8,9,16].includes(section)?null:null}
 {section===null?<p className="note">{t.note}</p>:null}</main></div></div></>;
 }
