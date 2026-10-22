@@ -1,0 +1,1 @@
+import Link from "next/link";import {Sketch,Tools} from "../widgets";export default function Drawing(){return <><header><Link className="lightlink" href="/">← К учебнику</Link><h1>Доска для физиологических схем</h1><p>Рисуйте пути кровотока, строение сердца и процессы регуляции</p></header><div className="container"><Tools/><Sketch/></div></>}
