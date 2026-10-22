@@ -1,10 +1,10 @@
 import Link from "next/link";
-import {moduleNames,sectionNames} from "../../../data/navigation";
-import {moduleOne} from "../../../data/module-one";
-import {moduleTwo} from "../../../data/module-two";
-import testOne from "../../../data/module-one-tests.json";
-import testTwo from "../../../data/module-two-tests.json";
-import {Tools,Quiz} from "../../widgets";
+import {moduleNames,sectionNames} from "../../../../data/navigation";
+import {moduleOne} from "../../../../data/module-one";
+import {moduleTwo} from "../../../../data/module-two";
+import testOne from "../../../../data/module-one-tests.json";
+import testTwo from "../../../../data/module-two-tests.json";
+import {Tools,Quiz} from "../../../widgets";
 export function generateStaticParams(){return moduleNames.flatMap((_,mi)=>sectionNames.map((_,si)=>({module:String(mi+1),section:String(si+1)})));}
 export default async function Lesson({params}){const p=await params, m=Number(p.module),s=Number(p.section);if(!Number.isInteger(m)||m<1||m>25||!Number.isInteger(s)||s<1||s>17)return <main>Раздел не найден. <Link href="/">К оглавлению</Link></main>;
 const l=m===1?moduleOne:moduleTwo,tests=m===1?testOne:testTwo;const available=m<3;
